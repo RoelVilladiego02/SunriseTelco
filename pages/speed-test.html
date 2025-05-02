@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Test - Sunrise Telecom</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/speed-test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div data-include="../components/header.html"></div>
+
+    <div class="speed-test-section">
+        <div class="container">
+            <h1>Internet Speed Test</h1>
+            <p>Test your current internet connection speed</p>
+            
+            <div class="speed-test-container">
+                <div class="speed-indicators">
+                    <div class="indicator">
+                        <i class="fas fa-download"></i>
+                        <span class="speed-value" id="download-speed">0</span>
+                        <span class="speed-label">Mbps Download</span>
+                    </div>
+                    <div class="indicator">
+                        <i class="fas fa-upload"></i>
+                        <span class="speed-value" id="upload-speed">0</span>
+                        <span class="speed-label">Mbps Upload</span>
+                    </div>
+                    <div class="indicator">
+                        <i class="fas fa-clock"></i>
+                        <span class="speed-value" id="ping">0</span>
+                        <span class="speed-label">ms Ping</span>
+                    </div>
+                </div>
+                <button id="start-test" class="cta cta-primary">Start Speed Test</button>
+            </div>
+        </div>
+    </div>
+
+    <div data-include="../components/footer.html"></div>
+    <script src="../script/include.js"></script>
+    <script src="../script/speed-test.js"></script>
+</body>
+</html>
