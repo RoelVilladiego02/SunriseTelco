@@ -26,6 +26,12 @@
     color: var(--dark-color);
     line-height: 1.6;
     text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  body.nav-open {
+    overflow: hidden;
   }
   
   a {
@@ -95,6 +101,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   
   .header h1 {
@@ -924,6 +931,21 @@
     .contact form button {
       width: 100%;
       padding: 12px 0;
+    }
+
+    .header {
+        position: relative;
+        z-index: 2000;
+    }
+    
+    .nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 2001;
+    }
+    
+    nav {
+        z-index: 1999;
     }
   }
   

@@ -8,51 +8,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Improved mobile navigation toggle
+    // Mobile navigation toggle with improved functionality
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
 
     if (navToggle && nav) {
-        // Ensure initial state is set
-        navToggle.setAttribute('aria-expanded', 'false');
-        
-        // Fix toggle button functionality
-        navToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Toggle the active class
+        navToggle.addEventListener('click', function() {
             nav.classList.toggle('active');
-            
-            // Update aria attributes
-            const isExpanded = nav.classList.contains('active');
-            navToggle.setAttribute('aria-expanded', isExpanded);
-            
-            // Control body scroll
-            document.body.style.overflow = isExpanded ? 'hidden' : '';
-            
-            console.log('Menu toggled:', isExpanded ? 'open' : 'closed');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (nav.classList.contains('active') && !nav.contains(e.target) && !navToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
+            // Optional: Toggle icon between hamburger and X (if using Font Awesome)
+            const icon = navToggle.querySelector('i');
+            if (icon) {
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
         });
-
-        // Close menu when clicking a nav link
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
-        });
     }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = nav && nav.contains(event.target);
+        const isClickOnToggle = navToggle && navToggle.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnToggle && nav && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            // Reset icon if applicable
+            const icon = navToggle.querySelector('i');
+            if (icon) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
 
     // Keep the testimonial slider functionality from the original code
     const testimonials = document.querySelectorAll('.testimonial');
