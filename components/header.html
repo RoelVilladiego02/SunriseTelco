@@ -1,4 +1,3 @@
-<!-- header.html - All-in-one responsive header solution -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,6 @@
     <title>Sunrise Telecom</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +17,6 @@
             line-height: 1.6;
         }
         
-        /* Header styles */
         .header {
             background-color: #ff6600;
             color: white;
@@ -47,7 +44,6 @@
             font-weight: bold;
         }
         
-        /* Navigation styles */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -68,7 +64,6 @@
             opacity: 0.8;
         }
         
-        /* Mobile menu button */
         .hamburger {
             display: none;
             background: none;
@@ -78,7 +73,6 @@
             cursor: pointer;
         }
         
-        /* Mobile styles */
         @media screen and (max-width: 768px) {
             .hamburger {
                 display: block;
@@ -128,13 +122,13 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="help-center.html">Help Center</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
-                    <li><a href="speed-test.html">Speed Test</a></li>
-                    <li><a href="support.html">Support</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="../pages/index.html">Home</a></li>
+                    <li><a href="../pages/help-center.html">Help Center</a></li>
+                    <li><a href="../pages/blog.html">Blog</a></li>
+                    <li><a href="../pages/faq.html">FAQs</a></li>
+                    <li><a href="../pages/speed-test.html">Speed Test</a></li>
+                    <li><a href="../pages/support.html">Support</a></li>
+                    <li><a href="../pages/contact.html">Contact Us</a></li>
                     <li><a href="/login/login.html">Login</a></li>
                 </ul>
             </div>
@@ -142,14 +136,12 @@
     </header>
 
     <script>
-        // Simple and reliable mobile navigation
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
         
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             
-            // Toggle icon
             const icon = hamburger.querySelector('i');
             if (icon.classList.contains('fa-bars')) {
                 icon.classList.remove('fa-bars');
@@ -160,7 +152,6 @@
             }
         });
         
-        // Close menu when clicking on a nav link
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');

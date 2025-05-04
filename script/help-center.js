@@ -69,13 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Scroll into view on mobile
         if (window.innerWidth <= 768) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
     }
 
-    // Handle sidebar navigation
     sidebarLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -85,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle search functionality
     searchInput.addEventListener('input', (e) => {
         const searchTerm = e.target.value.toLowerCase();
         const allContent = document.querySelectorAll('.faq-item, .help-section p');
@@ -103,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Show initial section based on hash or default to first section
     const initialSection = window.location.hash.substring(1) || 'internet';
     showSection(initialSection);
 });

@@ -1,6 +1,6 @@
-// Enhanced mobile navigation functionality
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Get CTA button event listener from original code
+    
     const ctaButton = document.getElementById("cta");
     if (ctaButton) {
         ctaButton.addEventListener("click", function() {
@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mobile navigation toggle with improved functionality
+
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
 
     if (navToggle && nav) {
         navToggle.addEventListener('click', function() {
             nav.classList.toggle('active');
-            // Optional: Toggle icon between hamburger and X (if using Font Awesome)
+
             const icon = navToggle.querySelector('i');
             if (icon) {
                 if (icon.classList.contains('fa-bars')) {
@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close menu when clicking outside
+
     document.addEventListener('click', function(event) {
         const isClickInsideNav = nav && nav.contains(event.target);
         const isClickOnToggle = navToggle && navToggle.contains(event.target);
         
         if (!isClickInsideNav && !isClickOnToggle && nav && nav.classList.contains('active')) {
             nav.classList.remove('active');
-            // Reset icon if applicable
+
             const icon = navToggle.querySelector('i');
             if (icon) {
                 icon.classList.remove('fa-times');
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Keep the testimonial slider functionality from the original code
     const testimonials = document.querySelectorAll('.testimonial');
     if (testimonials.length > 0) {
         let currentTestimonial = 0;
