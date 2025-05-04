@@ -111,7 +111,7 @@
     cursor: pointer;
     padding: 10px;
     transition: var(--transition);
-    z-index: 1001; /* Ensure button stays above nav menu */
+    z-index: 1001;
   }
 
   .nav-toggle:hover {
@@ -150,6 +150,34 @@
     width: 100%;
   }
   
+  .navbar {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+  }
+
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar ul li {
+    margin: 0 15px;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .navbar ul li a:hover {
+    color: #007bff;
+  }
   
   .hero {
     background: linear-gradient(
