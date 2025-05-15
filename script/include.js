@@ -1,14 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('[data-include]').forEach(element => {
+    const elements = document.querySelectorAll('[data-include]');
+    
+    elements.forEach(element => {
         const filePath = element.getAttribute('data-include');
+        
         fetch(filePath)
-            .then(response => response.text())
-            .then(data => {
-                element.innerHTML = data;
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(content => {
+                element.innerHTML = content;
+                // Execute any scripts in the included content
                 element.querySelectorAll('script').forEach(script => {
-                    eval(script.text);
+                    eval(script.textContent);
                 });
             })
-            .catch(error => console.error('Error loading component:', error));
+            .catch(error => {
+                console.error('Error loading component:', filePath, error);
+                element.innerHTML = `<p>Error loading component. Please try again later.</p>`;
+            });
     });
 });

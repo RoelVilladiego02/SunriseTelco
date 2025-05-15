@@ -15,12 +15,21 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            padding-top: 80px; /* Increased padding to prevent content overlap */
+            margin: 0;
         }
         
         .header {
             background-color: #ff6600;
             color: white;
             width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: 80px; /* Fixed height for header */
+            display: flex;
+            align-items: center;
         }
         
         .container {
@@ -30,11 +39,11 @@
         }
         
         .header-content {
+            padding: 0 2rem; /* Added horizontal padding */
+            height: 100%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
-            position: relative;
+            justify-content: space-between;
         }
         
         .logo a {
@@ -74,6 +83,14 @@
         }
         
         @media screen and (max-width: 768px) {
+            body {
+                padding-top: 70px; /* Smaller padding for mobile */
+            }
+            
+            .header {
+                height: 70px; /* Smaller height for mobile */
+            }
+            
             .hamburger {
                 display: block;
                 z-index: 101;

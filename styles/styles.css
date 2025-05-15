@@ -28,6 +28,7 @@
     text-align: center;
     margin: 0;
     padding: 0;
+    padding-top: 80px; /* Match header height */
   }
 
   body.nav-open {
@@ -202,6 +203,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    margin-top: -80px; /* Compensate for header padding */
   }
   
   .hero::before {
@@ -972,3 +974,54 @@
       justify-content: center;
     }
   }
+
+  /* Extra styles for specific pages */
+  .help-hero,
+  .support-hero,
+  .portal-hero,
+  .coverage-hero,
+  .plans-hero,
+  .business-hero {
+    margin-top: -80px;
+    padding-top: 120px; /* Extra padding for better visual spacing */
+    position: relative;
+  }
+
+  /* Section Padding Adjustments */
+  .section-padding {
+    padding-top: 2rem;
+  }
+
+  /* Responsive Adjustments */
+  @media screen and (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .hero,
+    .help-hero,
+    .portal-hero,
+    .coverage-hero,
+    .business-hero,
+    .support-hero,
+    .blog-hero {
+        margin-top: -70px;
+        padding-top: 100px;
+    }
+  }
+
+  body {
+    padding-top: 0; /* Remove default padding */
+}
+
+.main-content,
+.section-padding {
+    padding-top: 80px; /* Add padding only where needed */
+}
+
+@media screen and (max-width: 768px) {
+    .main-content,
+    .section-padding {
+        padding-top: 70px;
+    }
+}
